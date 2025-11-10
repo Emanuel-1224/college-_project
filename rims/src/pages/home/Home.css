@@ -1,0 +1,14 @@
+.content{
+    border: solid;
+    border-color: black;
+    color: blue;
+    height: 100vh;
+    overflow-y: auto;
+}
+.nav{
+    border: solid;
+    border-color: black;
+    color: blue;
+    height: 100vh;
+    overflow: auto;
+}

@@ -1,0 +1,121 @@
+/* Container styling */
+.info-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 12px; 
+  /* justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  padding: 20px;
+  background-color: #e8f5e9; */
+}
+
+/* Card styling */
+.info-card {
+  background: #dcdcdc;
+  border-radius: 12px;
+  width: 360px;
+  height: 480px; /* increased uniform height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+  padding: 22px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Title styling */
+.info-title {
+  color: #4b44d2;
+  text-align: center;
+  border-bottom: 2px solid #000;
+  margin-bottom: 12px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* Content styling */
+.info-content {
+  flex-grow: 1;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.8;
+  color: #000;
+  overflow-y: auto;
+}
+
+/* Hide scrollbar for cleaner look */
+.info-content::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Button styling */
+.info-btn {
+  position: relative;
+  background: transparent;
+  color: #000;
+  border: 2px solid #007bff;
+  border-radius: 25px;
+  padding: 12px 20px;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  overflow: hidden;
+  align-self: center;
+  transition: color 0.3s ease;
+}
+
+/* Blue hover fill effect */
+.info-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #007bff;
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.info-btn:hover::before {
+  left: 0;
+}
+
+.info-btn:hover {
+  color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .info-card {
+    width: 46%;
+    height: 440px;
+  }
+}
+
+@media (max-width: 768px) {
+  .info-card {
+    width: 90%;
+    height: 420px;
+  }
+
+  .info-title {
+    font-size: 22px;
+  }
+
+  .info-content {
+    font-size: 16px;
+  }
+
+  .info-btn {
+    font-size: 16px;
+  }
+}

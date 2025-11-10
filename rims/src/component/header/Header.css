@@ -1,0 +1,202 @@
+/* ========== MAIN HEADER ========== */
+.header {
+  background-color: #2a1956; /* Deep purple-blue background */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 35px; /* ⬆ More inner space */
+  position: relative;
+  flex-wrap: wrap;
+  border-bottom: none;
+  min-height: 130px; /* ⬆ Taller header for better spacing */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Add gap before yellow section */
+.header-wrapper {
+  margin-bottom: 10px;
+}
+
+/* ========== LEFT SECTION ========== */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 80px; /* ⬆ Larger logo box */
+  height: 80px;
+  background-color: #d9d9d9; /* Placeholder */
+  border-radius: 8px;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+.menu-icon {
+  color: red;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.iic-info {
+  display: flex;
+  flex-direction: column;
+  background-color: #eef3ec;
+  color: #000;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.iic-label {
+  font-size: 14px;
+}
+
+.iic-id {
+  font-size: 15px;
+}
+
+/* ========== CENTER SECTION ========== */
+.header-center {
+  flex: 1;
+  text-align: center;
+}
+
+.center-title {
+  font-size: 28px; /* ⬆ Bigger, bolder title */
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: white;
+  margin: 0;
+}
+
+/* ========== RIGHT SECTION ========== */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.rating-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #eef3ec;
+  color: black;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+  margin-top: 5px;
+}
+
+.star-icon {
+  color: #f4b400;
+  font-size: 16px;
+}
+
+.profile-pic {
+  width: 65px; /* ⬆ Larger profile for clarity */
+  height: 65px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  z-index: 2;
+}
+
+/* ========== BOTTOM YELLOW STRIP ========== */
+.header-bottom {
+  background-color: #ffeb00;
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+  color: #000;
+  padding: 8px 0; /* ⬆ Thicker bar for visibility */
+  font-size: 15px;
+  margin-top: 10px; /* ⬆ Adds space between purple and yellow sections */
+}
+
+/* ========== RESPONSIVENESS ========== */
+@media (max-width: 992px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    min-height: 160px;
+  }
+
+  .header-left,
+  .header-right {
+    justify-content: center;
+  }
+
+  .header-center {
+    margin: 12px 0;
+  }
+
+  .center-title {
+    font-size: 22px;
+  }
+
+  .profile-pic {
+    width: 55px;
+    height: 55px;
+  }
+
+  .logo {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    padding: 15px;
+    min-height: 170px;
+  }
+
+  .logo {
+    width: 220px;
+    height: 60px;
+  }
+
+  .menu-icon {
+    font-size: 24px;
+  }
+
+  .center-title {
+    font-size: 20px;
+  }
+
+  .rating-box {
+    align-items: center;
+    padding: 6px 12px;
+  }
+
+  .profile-pic {
+    width: 50px;
+    height: 50px;
+  }
+
+  .header-bottom {
+    font-size: 14px;
+    padding: 6px 0;
+    margin-top: 12px;
+  }
+}

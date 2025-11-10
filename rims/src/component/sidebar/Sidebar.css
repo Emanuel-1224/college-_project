@@ -1,0 +1,50 @@
+.abc{
+    background-color: white !important;
+    color: black !important;
+    margin: 0 -1rem;
+    padding: 1rem 1rem;
+    position: sticky !important;
+    top: 0 ;
+    z-index: 100;
+}
+.accord-head{
+    border-bottom:solid 1px !important;
+    border-left: solid 1px !important;
+    border-right: solid 1px !important;
+}
+.item{
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: var(--bs-accordion-btn-color);
+    padding: var(--bs-accordion-btn-padding-y) var(--bs-accordion-btn-padding-x);
+    height: 100%;
+    width: 100%;
+    font-size:1rem;
+    border-bottom:solid 1px !important;
+    border-left: solid 1px !important;
+    border-right: solid 1px !important;
+}
+.logo1{
+    height: 3rem;
+    width: 11rem;
+}
+.contents{
+    width: 100% !important;
+}
+.over{
+    overflow: auto;
+}
+.accord-body{
+  overflow-y: auto !important;
+}
+.list-items{
+  border-bottom: ridge;
+  padding: 0.3rem 0;
+}
+.drop{
+    width: 100%;
+}
+.drop_item{
+    width: inherit;
+}
