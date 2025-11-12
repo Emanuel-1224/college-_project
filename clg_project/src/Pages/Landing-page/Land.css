@@ -1,0 +1,127 @@
+/* C3iHubLanding.css
+   Place this file alongside C3iHubLanding.jsx and the component already imports it:
+   import "./C3iHubLanding.css";
+*/
+
+:root{
+  --bg-top:#0b0606;
+  --bg-bottom:#1a120f;
+  --accent: #ff7a18;
+  --muted:#bdb2aa;
+}
+
+/* Container + background */
+.landing-container{
+  min-height:100vh;
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+  background: linear-gradient(180deg,var(--bg-top) 0%, var(--bg-bottom) 100%);
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+/* subtle grid overlay using a pseudo element */
+.landing-container::before{
+  content:"";
+  position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image: radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px, 60px 60px;
+  background-position: 0 0, 30px 30px;
+  opacity:0.28;
+}
+
+/* Header */
+.header1{
+  /* position:absolute;top:0;left:0;right:0;z-index:30; */
+  display:flex;align-items:center;justify-content:space-between;
+  padding:22px 36px;gap:18px;
+}
+.logo{
+  width:56px;height:56px;border-radius:999px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700;color:#111;font-size:18px;z-index:31;
+}
+.nav-links{display:flex;gap:20px;align-items:center;color:rgba(255,255,255,0.9);font-size:14px}
+.nav-links a{cursor:pointer}
+.signin-btn{background:transparent;border:1px solid rgba(255,122,24,0.25);padding:8px 14px;border-radius:10px;color:var(--accent);font-weight:600}
+
+/* Main layout */
+.main-content{
+  position:relative;z-index:10;display:grid;grid-template-columns:repeat(12,1fr);gap:24px;padding:120px 40px 80px;align-items:center;
+}
+.left-section{grid-column:1 / span 6;max-width:720px}
+.right-section{grid-column:7 / -1;position:relative;height:560px;display:flex;align-items:center;justify-content:center}
+
+/* Left column text */
+.tag{display:inline-block;padding:10px 16px;border-radius:999px;background:rgba(255,122,24,0.06);border:1px solid rgba(255,122,24,0.08);color:var(--accent);font-weight:700;margin-bottom:18px}
+.title{font-size:3.75rem;line-height:1;margin:6px 0 6px;color:#ffd6bf;font-weight:800}
+.subtitle{font-size:1.125rem;color:#e8e3e0;font-weight:700}
+.description{margin-top:10px;color:var(--muted)}
+.description .highlight{color:var(--accent);font-weight:700}
+.upgrade-box{margin-top:22px;padding:14px;border-radius:8px;background:rgba(255,255,255,0.02);border-left:4px solid var(--accent);color:#ffe9d9}
+.logos{display:flex;gap:18px;margin-top:26px;align-items:center}
+.logo1, .logo2{background:rgba(255,255,255,0.02);padding:12px;border-radius:6px;border:1px solid rgba(255,255,255,0.02)}
+
+/* Right column: animated scene */
+.central-bubble{
+  width:180px;height:180px;border-radius:999px;display:flex;align-items:center;justify-content:center;
+  background: radial-gradient(circle at 30% 30%, rgba(255,122,24,0.16), rgba(255,122,24,0.04));
+  box-shadow: 0 0 0 8px rgba(255,122,24,0.03), 0 20px 50px rgba(0,0,0,0.6);
+  animation: float 6s ease-in-out infinite;z-index:8;backdrop-filter:blur(2px);
+}
+.shield-icon{width:72px;height:72px}
+
+.orbit{position:absolute;border-radius:999px;border:1px solid rgba(255,122,24,0.06);z-index:4}
+.orbit-1{width:320px;height:320px;top:50%;left:50%;transform:translate(-50%,-50%);animation: rotateOrbit 26s linear infinite}
+.orbit-2{width:420px;height:420px;top:50%;left:50%;transform:translate(-50%,-50%);animation: rotateOrbitReverse 40s linear infinite;opacity:0.18}
+
+.badge{position:absolute;padding:10px 14px;background:rgba(0,0,0,0.6);border-radius:12px;border:1px solid rgba(255,122,24,0.12);backdrop-filter: blur(4px);font-weight:700;z-index:9}
+.b1{right:30px;top:30px;transform:translateY(-6px);animation:bob 5s ease-in-out infinite}
+.b2{left:110px;top:130px;animation:bob 6s ease-in-out -1s infinite}
+.b3{right:70px;bottom:100px;animation:bob 4.2s ease-in-out -0.5s infinite}
+
+.dot{position:absolute;width:12px;height:12px;background:rgba(255,122,24,0.16);border-radius:999px;box-shadow:0 6px 18px rgba(0,0,0,0.6);z-index:6}
+.d1{left:60%;top:18%;animation:float 7s ease-in-out 0s infinite}
+.d2{left:82%;top:40%;animation:float 5.6s ease-in-out -1s infinite}
+.d3{left:72%;top:70%;animation:float 6.8s ease-in-out -0.6s infinite}
+.d4{left:50%;top:85%;width:18px;height:18px;background:rgba(255,122,24,0.2);animation:float 4.8s ease-in-out -0.8s infinite}
+.d5{left:30%;top:60%;animation:float 8s ease-in-out -2s infinite}
+
+/* floating/request button */
+.request-btn{position:fixed;right:24px;bottom:24px;background:var(--accent);color:#111;padding:12px 18px;border-radius:999px;border:none;font-weight:700;box-shadow:0 8px 30px rgba(0,0,0,0.6);z-index:40;transition:transform .18s ease}
+.request-btn:hover{transform:translateY(-4px)}
+
+.footer-gradient{position:absolute;left:0;right:0;bottom:0;height:80px;background:linear-gradient(180deg, rgba(18,8,6,0.0), rgba(18,8,6,1));z-index:5}
+
+/* Animations */
+@keyframes float{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-12px)}
+  100%{transform:translateY(0)}
+}
+@keyframes bob{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
+  100%{transform:translateY(0)}
+}
+@keyframes rotateOrbit{0%{transform:translate(-50%,-50%) rotate(0deg)}100%{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes rotateOrbitReverse{0%{transform:translate(-50%,-50%) rotate(360deg)}100%{transform:translate(-50%,-50%) rotate(0deg)}}
+
+/* Responsive tweaks */
+@media (max-width: 1024px){
+  .main-content{padding:100px 28px}
+  .left-section{grid-column:1 / span 7}
+  .right-section{grid-column:8 / -1;height:480px}
+}
+@media (max-width: 768px){
+  .main-content{display:block;padding:100px 20px}
+  .left-section{width:100%;grid-column:1 / -1;padding-bottom:28px}
+  .right-section{width:100%;grid-column:1 / -1;height:420px;margin-top:10px}
+  .title{font-size:2.6rem}
+  .orbit-1{width:260px;height:260px}
+  .orbit-2{width:340px;height:340px}
+}
+@media (max-width:480px){
+  .title{font-size:1.85rem}
+  .nav-links{display:none}
+  .signin-btn{display:none}
+  .header{padding:14px 16px}
+}
